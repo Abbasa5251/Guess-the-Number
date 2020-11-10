@@ -1,9 +1,11 @@
+import random
+
 class GuessNumber(object):
-    def __init__(self, number, min, max):
+    def __init__(self, min, max):
         self.guesses = 0
-        self.number = number
         self.min = min
         self.max = max
+        self.number = random.randint(self.min, self.max)
 
     def get_guess(self):
         guess = input(f"Please guess a Number ({self.min} - {self.max}): ")
@@ -36,5 +38,5 @@ class GuessNumber(object):
         print(f"You guessed exact Number in {self.guesses} guesses.")
 
 
-game = GuessNumber(45, 0, 100)
+game = GuessNumber(0, 50)
 game.play()
